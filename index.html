@@ -8,20 +8,46 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+
   <link href="css/normalize.css" rel="stylesheet">
   <link href="node_modules/uikit/dist/css/uikit.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
 
+
 </head>
 
 <body>
-<div id="app" ui-kit>
-  <h1 class="uk-text-center">{{title}}</h1>
+<div id="app">
+  <div class="custom-nav uk-navbar-container uk-navbar-transparent" uk-navbar>
+     <div class="uk-navbar-left"> 
+        <a :href="sitelink" class="uk-navbar-item uk-logo">Sock sellers</a>
+     </div>  
+     <div class="uk-navbar-right">
+       <a :href="cartlink" uk-icon="icon: cart"></a>
+     </div>
+  </div>
 
+  <div class="product uk-container">
+    <div class="uk-flex-center" uk-grid>
+      <div class="product-image uk-width-1-3@s uk-inline">
+        <span class="uk-label uk-label-danger uk-position-top-right" v-show="onSale">On sale!</span>
+        <img :src="image" >
+
+      </div>
+      <div class="product-info uk-width-1-3@s">
+        <h1 class="">{{product}}</h1>
+        <h5 class="subtitle">Product description: {{description}}</h5>
+        <ul>
+          <li v-for="detail in details">{{ detail }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="node_modules/uikit/dist/js/uikit.js"></script>
+  <script src="node_modules/uikit/dist/js/uikit-icons.min.js"></script>
   <script src="js/script.js"></script>
 
 </body>

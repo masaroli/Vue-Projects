@@ -1,7 +1,14 @@
 var app = new Vue({
 	el: '#app',
 	data:{
-		title:'New Vue Project!'
+		product:'Socks'
+		, description:'A pair of fine socks'
+		, image: './assets/img/vmSocks-green-onWhite.jpg'
+		, sitelink: 'https://www.google.com'
+		, cartlink: '#'
+		, onSale: true
+		, details: ['100% cotton', 'Unisex', 'Warm and Comfortable']
+
 	}
 
 })
